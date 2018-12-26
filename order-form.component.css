@@ -1,0 +1,109 @@
+/* Time Table */
+#test {
+  color: #575962;
+  box-shadow: 0px 0px 1px 1px #eee;
+  direction: ltr;
+  width: 100%;
+  display: table;
+  padding-left: 0;
+  padding-right: 0;
+}
+#test table {
+  width: calc(100% - 60px);
+  max-width: 100%;
+  background-color: transparent;
+  text-align: center;
+  border: 2px solid #0ba88c;
+  margin-left: 30px;
+}
+#test table th {
+  background: #34bfa3;
+  color: #ffffff;
+  padding: 5px 0;
+  padding-top: 8px;
+  font-size: 14px;
+}
+#test .table-radio {
+  margin-right: 9px;
+  position: relative;
+  top: 4px;
+}
+#test .table-name {
+  position: relative;
+  top: 3px;
+}
+#test table td {
+  padding: 0.75rem 2px;
+  vertical-align: top;
+  border-top: 2px solid #1fa78c;
+  border-right: 1px solid #eee;
+}
+#test table td:last-child {
+  border-right: 0;
+}
+#test table td .table-minute {
+  width: calc(100% / 60);
+  height: 15px;
+  display: inline-block;
+}
+#test .started {
+  background: #3498db;
+}
+#test .finished {
+  background: #f1c40f;
+}
+
+#test .admin_approved {
+  background: #e67e22;
+}
+#test .technician_approved {
+  background: #2ecc71;
+}
+#test .admin_pending {
+  background: #7f8c8d;
+}
+.table-keys {
+  margin: 30px 0 10px 0;
+  display: flex;
+  justify-content: center;
+}
+#test table .times-bar {
+  position: absolute;
+  width: 100%;
+  top: 55%;
+  transform: translateY(-50%);
+}
+
+#test table .hour-bar {
+  position: relative;
+}
+.table-keys .span-bg {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  /* float: right; */
+  margin-left: 10px;
+}
+.table-keys label {
+  margin-left: 30px;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  float: right;
+}
+#timing {
+  display: inline-block;
+  width: 100%;
+  padding-bottom: 21px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 10px;
+}
+.name-width {
+  width: 20px;
+  display: inline-block;
+}
+.name-Table-Radio {
+  text-align: left;
+}
+/* Time Table */

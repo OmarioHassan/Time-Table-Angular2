@@ -1,0 +1,60 @@
+<div class="m-portlet__body update-technical-form">
+  <!-- &&&&&&&&&&&&&&&&&&&&&&&&&& -->
+  <!-- Start Table -->
+  <div class="form-group m-form__group" id="test">
+    <div id="timing"></div>
+    <table class="TimeTable" id="TimeTable">
+      <tbody>
+        <tr class="theader" id="theader">
+          <th>NAME</th>
+          <th>9:00 am</th>
+          <th>10:00 am</th>
+          <th>11:00 am</th>
+          <th>12:00 am</th>
+          <th>1:00 pm</th>
+          <th>2:00 pm</th>
+          <th>3:00 pm</th>
+          <th>4:00 pm</th>
+          <th>5:00 pm</th>
+          <th>6:00 pm</th>
+          <th>7:00 pm</th>
+          <th>8:00 pm</th>
+          <th>9:00 pm</th>
+          <th>10:00 pm</th>
+
+          <th>Total</th>
+        </tr>
+        <tr *ngFor="let tech of technical">
+          <td class="name-Table-Radio">
+            <span class="name-width"></span> <input type="radio" name="gender" class="table-radio" /><label class="table-name" for="gender">{{ tech.name }}</label>
+          </td>
+          <td *ngFor="let hour of hours" id="hour{{ hour }}" class="hour-bar">
+            <div *ngFor="let time of tech.times" class="times-bar">
+              <div *ngIf="hour >= time.fromH && hour <= time.toH" class="times-inner">
+                <!-- {{ time.status }} -->
+                <div
+                  *ngFor="let minute of minutes"
+                  class="table-minute"
+                  [className]="
+                    time.status && ((hour >= time.fromH && hour < time.toH && minute >= time.fromM) || (hour > time.fromH && hour < time.toH) || (hour === time.toH && minute <= time.toM))
+                      ? 'table-minute ' + time.status
+                      : 'table-minute'
+                  "
+                ></div>
+              </div>
+            </div>
+          </td>
+          <td>00:00</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="table-keys">
+      <label>في انتظار موافقة الأدمن<span class="span-bg admin_pending"></span></label> <label>تم الموافقة من الأدمن<span class="span-bg admin_approved"></span></label>
+      <label>تم الموافقة من الفني<span class="span-bg technician_approved"></span></label> <label>تم البدء<span class="span-bg started"></span></label>
+      <label>تم الإنتهاء<span class="span-bg finished"></span></label>
+    </div>
+  </div>
+
+  <!-- End Table -->
+  <!-- &&&&&&&&&&&&&&&&&&&&&&&&&& -->
+</div>
